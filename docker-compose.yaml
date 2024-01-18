@@ -1,0 +1,29 @@
+services:
+  angular-app:
+    image: karapecmax/scandiweb-angular-app:latest
+    build:
+      context: C:\Users\User\Desktop\scandiweb\ScandiwebTest
+      dockerfile: \Dockerfile
+    ports:
+      - "80:80"
+  php-backend:
+    image: karapecmax/scandiweb-php-backend:latest
+    build:
+      context: C:\Users\User\Desktop\scandiweb\backend
+      dockerfile: \Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql-db
+  mysql-db:
+    image: mariadb
+    build:
+      context: C:\Users\User\Desktop\scandiweb\database
+      dockerfile: \Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: "12345678"
+      MYSQL_DATABASE: "products"
+      MYSQL_PASSWORD: "12345678"
+      MYSQL_HOST: "localhost"
+    ports:
+      - "3306:3306"

@@ -1,0 +1,10 @@
+Array
+(
+    [name] => Toshe Proeski - Po tebe
+    [sku] => JVC-100001
+    [price] => 15
+    [type] => disk
+    [size] => 1024
+    [weight] => 
+    [dimensions] => 
+)
